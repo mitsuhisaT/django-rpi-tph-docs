@@ -1,41 +1,41 @@
 # django-rpi-tph-docs
 Documents for my [django-rpi-tph-monitor](https://github.com/mitsuhisaT/django-rpi-tph-monitor) project.
 
-# English document(default)
+# 英語のドキュメント(デフォルト)
 
-## repository
+## リポジトリー
 
 - HTTPS:
   - https://github.com/mitsuhisaT/django-rpi-tph-docs.git
 - SSH
   - git@github.com:mitsuhisaT/django-rpi-tph-docs.git
 
-## branch
+## ブランチ
 
 ```shell
 $ git checkout i10n/en
 ```
 
-## Another languages
+## 別の言語
 
-For example Japanese.
+例えば日本語。
 
-Checkout another language branch.
+別言語のチェック・アウト
 
 ```shell
 $ git checkout i10n/ja
 ```
 
-If first time, you must create branch and new repository(project).
+もし初めてなら、ブランチと新しいリポジトリーを生成しなければならない。
 
 ```shell
 $ git checkout -b i10n/{language code} --track remote/i10n/{language code}
 ```
 
-Please read 
-[Internationalization](https://www.sphinx-doc.org/en/master/usage/advanced/intl.html).
+[国際化](https://www.sphinx-doc.org/ja/master/usage/advanced/intl.html).
+を読んでください。
 
-Generate po files.
+po ファイルを作成します。
 
 ```shell
 $ cd docs
@@ -44,6 +44,7 @@ $ sphinx-intl update -p _build/gettext -l ja
 ```
 
 Commit and Push po files.
+po ファイルを `git commit` し `git push` します。
 
 ```shell
 $ git add locale/ja/LC_MESSAGES/*.po
@@ -51,7 +52,7 @@ $ git commit -m "docs: because update and add some describes."
 $ git push
 ```
 
-## merge develop
+## develop へのマージ
 
 ```shell
 $ git checkout develop
@@ -65,23 +66,23 @@ Last, change default branch `i10n/en`.
 $ git checkout i10n/en
 ```
 
-# Another language document
+# 別言語のドキュメント
 
-For example Japanese.
+例えば日本語。
 
-## Clone repository
+## リポジトリーをクローン
 
 ```shell
 $ git clone git@github.com:mitsuhisaT/django-rpi-tph-docs-l10n-ja.git
 ```
 
-Change repository directory.
+リポジトリーのディレクトリに移動。
 
 ```shell
 $ cd django-rpi-tph-docs-l10n-ja
 ```
 
-## Set up for Sync main repository
+## 主リポジトリーの設定
 
 ```shell
 $ git remote -v
@@ -89,7 +90,7 @@ origin	git@github.com:mitsuhisaT/django-rpi-tph-docs-l10n-ja.git (fetch)
 origin	git@github.com:mitsuhisaT/django-rpi-tph-docs-l10n-ja.git (push)
 ```
 
-Add [upstream](https://github.com/mitsuhisaT/django-rpi-tph-docs).
+[upstream](https://github.com/mitsuhisaT/django-rpi-tph-docs) を追加。
 
 ```shell
 $ git remote add upstream git@github.com:mitsuhisaT/django-rpi-tph-docs.git
@@ -114,7 +115,7 @@ $ git branch --all
   remotes/upstream/main
 ```
 
-Syncronize upstream, document main repository.
+ドキュメントの主リポジトリーと同期する。
 
 ```shell
 $ git fetch upstream
@@ -142,7 +143,7 @@ $ git push
 Everything up-to-date
 ```
 
-## change branch
+## ブランチを変える
 
 ```shell
 $ git checkout i10n/{language code}
